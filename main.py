@@ -11,6 +11,7 @@ Free: -/
 """
 
 import turtle 
+import os
 
 window = turtle.Screen()  
 window.title("Ping Pong Game by @akshat_srivastava") 
@@ -104,10 +105,12 @@ while True:
     if ycor > 290:
         ball.sety(290)
         ball.dy *= -1 
+        os.system("afplay bounce.wav&")
 
     elif ycor < -290:
         ball.sety(-290)
         ball.dy *= -1 
+        os.system("afplay bounce.wav&")
 
     elif xcor > 390:
         score_a += 1
@@ -125,8 +128,10 @@ while True:
 
     elif ball.xcor() < -340 and (ball.ycor() < paddle_a.ycor() + 50 and ball.ycor() > paddle_a.ycor() - 50):
         ball.dx *= -1 
+        os.system("afplay bounce.wav&")
 
     elif ball.xcor() > 340 and (ball.ycor() < paddle_b.ycor() + 50 and ball.ycor() > paddle_b.ycor() - 50):
         ball.dx *= -1
+        os.system("afplay bounce.wav&")
 
 # End
